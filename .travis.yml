@@ -8,7 +8,7 @@ before_install: chmod +x ./buildEnvironment.sh
   
 install: sudo ./buildEnvironment.sh
 
-script: xvfb gradle test
+script: ant test -DFLASH_PLAYER_CMD="${FLASH_PLAYER_EXE}"
 
 addons:
   apt:
