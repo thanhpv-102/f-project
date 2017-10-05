@@ -14,13 +14,14 @@ ant -f installer.xml -Dair.sdk.version=2.6 \
 
 export PATH="$FLEX_HOME/bin:$PATH"
 
-apt-get install -y --no-install-recommends libnss3 libgtk2.0-0 xvfb xauth
 curl -fL -o /tmp/flash_player.tar.gz https://fpdownload.macromedia.com/pub/flashplayer/updaters/27/flash_player_sa_linux_debug.x86_64.tar.gz
 tar -xzf /tmp/flash_player.tar.gz -C /tmp
 mv /tmp/flashplayerdebugger /usr/local/bin/
 mkdir -p /usr/local/doc/flashplayerdebugger
 mv /tmp/LGPL/* /usr/local/doc/flashplayerdebugger/
 chown -R root:root /usr/local/bin/flashplayerdebugger /usr/local/doc/flashplayerdebugger
+
+echo $DISPLAY
 
 echo '#!/bin/sh' 											>> /usr/local/bin/xvfb
 echo 'num=$(echo $DISPLAY | cut -d: -f2)'           		>> /usr/local/bin/xvfb
@@ -29,6 +30,6 @@ echo 'xvfb-run -e /dev/stderr -n $num -s "$args" "$@"' 		>> /usr/local/bin/xvfb
 chmod +x /usr/local/bin/xvfb
 
 export FLASH_PLAYER_EXE='/usr/local/bin/flashplayerdebugger'
-export DISPLAY=':99'
+#export DISPLAY=':99'
 export RESOLUTION='1024x768x24'
 
