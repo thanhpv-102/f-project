@@ -16,7 +16,9 @@ before_script:
   # Manually install Mockito-Flex 1.4M5 locally
   - mvn install:install-file -Dfile=./libs/mockito-flex-1.4M5.swc -DgroupId=org.mockito -DartifactId=mockito-flex -Dversion=1.4M5 -Dpackaging=swc
 
-script: mvn test
+script: 
+  - cd fprj-core-test
+  - mvn -e test
 
 addons:
   apt:
