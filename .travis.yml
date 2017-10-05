@@ -17,7 +17,7 @@ before_script:
   - mvn install:install-file -Dfile=./libs/mockito-flex-1.4M5.swc -DgroupId=org.mockito -DartifactId=mockito-flex -Dversion=1.4M5 -Dpackaging=swc
 
 script: 
-  - cd fprj-core-test
+  - cp pom.xml fprj-core-test/ && cd fprj-core-test
   - mvn -e test
 
 addons:
