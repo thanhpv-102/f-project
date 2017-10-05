@@ -7,3 +7,4 @@ before_install: chmod +x ./buildEnvironment.sh
 install: ./buildEnvironment.sh
 
 script: xvfb gradle test
+
