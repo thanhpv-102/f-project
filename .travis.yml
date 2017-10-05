@@ -27,7 +27,6 @@ addons:
       - libasound2-dev
       - libcap-dev
       - libcups2-dev
-      - libXtst-dev
       - libcurl4-openssl-dev 
       - libxkbfile-dev
       - xauth 
