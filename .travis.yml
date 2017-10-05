@@ -12,6 +12,8 @@ script: xvfb gradle test
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
     packages:
       - xvfb
       - libnss3
